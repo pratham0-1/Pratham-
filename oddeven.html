@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd or Even Checker</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            width: 350px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>HELLO</h1>
+        <h2>Find Odd or Even</h2>
+
+        <input
+            type="number"
+            id="numberInput"
+            placeholder="Enter Integer"
+            step="1">
+
+        <br>
+
+        <button onclick="checkNumber()">Check</button>
+
+        <div id="result"></div>
+
+        <footer>
+            <p>Developed by Pratham</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkNumber() {
+
+            let value = document.getElementById("numberInput").value;
+            let result = document.getElementById("result");
+
+            if (value === "") {
+                result.innerHTML = "Invalid Input";
+                return;
+            }
+
+            if (!Number.isInteger(Number(value))) {
+                result.innerHTML = "Please enter an integer only";
+                return;
+            }
+
+            let n = Number(value);
+
+            if (n % 2 === 0) {
+                result.innerHTML = "Number is Even";
+            } else {
+                result.innerHTML = "Number is Odd";
+            }
+        }
+    </script>
+
+</body>
+</html>
